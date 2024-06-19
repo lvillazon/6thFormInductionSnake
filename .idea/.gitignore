@@ -1,3 +1,33 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+# Exclude all files in the .idea directory
+.idea/*
+
+# Include specific files and directories in the .idea directory
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/runConfigurations/
+!.idea/vcs.xml
+
+# Exclude workspace-related files (already covered by the default config)
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/libraries
+
+# Include module files
+*.iml
+
+# Exclude other common IntelliJ files
+.idea/shelf/
+.idea/vcs.xml
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/inspectionProfiles
+.idea/codeStyles
+.idea/scopes
+
+# Exclude build output directories
+/out/
