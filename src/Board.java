@@ -86,6 +86,17 @@ public class Board extends JPanel implements Runnable{
                 red = i * (255 / snake.getLength());
                 g2.fillRect(snake.getX(i)*gridWidth(), snake.getY(i)*gridHeight(), gridWidth(), gridHeight());
             }
+            if (snake.isDead()) {
+                System.out.println("You died!");
+                g.setColor(Color.RED);
+                g.setFont(new Font("Courier", Font.BOLD, 50));
+                FontMetrics fm = g.getFontMetrics();
+                String message = "You died!";
+                int x = (SCREEN_WIDTH - fm.stringWidth(message)) / 2;
+                int y = ((SCREEN_HEIGHT - fm.getHeight()) / 2) + fm.getAscent();
+                g.drawString(message, x, y);
+                running = false;
+            }
         }
     }
 
@@ -141,6 +152,13 @@ public class Board extends JPanel implements Runnable{
                 e.printStackTrace();
             }
         }
+        // wait 3 seconds and restart
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         // quit when not running
         System.exit(0);
     }
